@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Без этой строки телефон покажет страницу «как на компьютере», уменьшенной, и адаптив не сработает -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travlog - travel top destination of the world</title>
+  <meta name="description" content="Travlog - travel agency landing page: top destinations, easy booking, special deals.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+  <!-- preconnect заранее открывает соединение с сервером шрифтов - текст появляется быстрее -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- display=swap: пока шрифт грузится, текст виден системным шрифтом, а не пустотой -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700;9..40,900&family=Inter:wght@400&display=swap">
+
+  <!-- Порядок важен: сброс -> переменные -> стили, которые их используют -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ссылка для клавиатуры: Tab сразу после загрузки позволяет пропустить меню -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Шапка ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#" aria-label="Travlog - home">
+        <img class="logo__icon" src="images/logo.svg" alt="" width="40" height="40">
+        <span class="logo__text">Travlog</span>
+      </a>
+
+      <!-- id нужен, чтобы кнопка-бургер могла сослаться на меню через aria-controls -->
+      <nav class="nav" id="main-nav" aria-label="Main menu">
+        <ul class="nav__list">
+          <li><a class="nav__link nav__link--active" href="#" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="#discover">Discover</a></li>
+          <li><a class="nav__link" href="#deals">Special Deals</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a class="button button--light" href="#">Log In</a>
+          <a class="button button--primary" href="#">Sign Up</a>
+        </div>
+      </nav>
+
+      <!-- aria-expanded меняет JS: так экранные дикторы понимают, открыто меню или нет -->
+      <button class="burger" type="button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Главный экран ===== -->
+    <section class="hero">
+      <!-- Декор: размытое жёлтое пятно справа и оранжевые «стрелки» слева. aria-hidden - для экранных дикторов их нет -->
+      <span class="hero__glow" aria-hidden="true"></span>
+      <img class="hero__dots" src="images/decor/dots-hero.svg" alt="" aria-hidden="true" width="65" height="170">
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="badge">
+            Explore the world!
+            <img src="images/icons/work.svg" alt="" width="24" height="24">
+          </p>
+          <!-- h1 на странице один: это главный заголовок для поисковиков -->
+          <h1 class="hero__title">
+            Travel <span class="accent">top destination</span> of the world
+          </h1>
+          <p class="hero__text">
+            We always make our customer happy by providing as many choices as possible
+          </p>
+          <div class="hero__buttons">
+            <a class="button button--primary button--lg" href="#discover">Get Started</a>
+            <a class="button button--light button--outline button--lg" href="#">
+              <img src="images/icons/play-circle.svg" alt="" width="24" height="24">
+              Watch Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Коллаж: карта с маршрутами на фоне, три фото и «летающие» плашки -->
+        <div class="hero__visual">
+          <img class="hero__route" src="images/hero-route.png" alt="" aria-hidden="true" width="772" height="287">
+          <div class="hero__gallery">
+            <img class="hero__photo hero__photo--1" src="images/hero-1.jpg" alt="Santorini: white houses above the sea" width="272" height="300">
+            <img class="hero__photo hero__photo--2" src="images/hero-2.jpg" alt="Traveler resting in the mountains" width="272" height="300">
+            <img class="hero__photo hero__photo--3" src="images/hero-3.jpg" alt="Traveler with a backpack taking a photo of the city" width="272" height="400">
+          </div>
+          <span class="float-icon float-icon--pink" aria-hidden="true"><img src="images/icons/send.svg" alt="" width="32" height="32"></span>
+          <span class="float-icon float-icon--orange" aria-hidden="true"><img src="images/icons/add-user.svg" alt="" width="32" height="32"></span>
+          <span class="float-chip" aria-hidden="true"><img src="images/icons/location.svg" alt="" width="24" height="24">Top Places</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Партнёры ===== -->
+    <section class="partners" aria-label="Our partners">
+      <ul class="container partners__list">
+        <li><img src="images/partners/partner-1.svg" alt="Tripadvisor" width="212" height="32" loading="lazy"></li>
+        <li><img src="images/partners/partner-2.svg" alt="Expedia" width="114" height="32" loading="lazy"></li>
+        <li><img src="images/partners/partner-3.svg" alt="Booking.com" width="189" height="32" loading="lazy"></li>
+        <li><img src="images/partners/partner-4.svg" alt="Airbnb" width="103" height="32" loading="lazy"></li>
+        <li><img src="images/partners/partner-5.svg" alt="Orbitz" width="174" height="32" loading="lazy"></li>
+      </ul>
+    </section>
+
+    <!-- ===== Услуги ===== -->
+    <section class="section services" id="discover" aria-labelledby="services-title">
+      <div class="container services__inner">
+        <header class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2 class="section-title" id="services-title">Our top value categories for you</h2>
+        </header>
+
+        <ul class="services__list">
+          <li class="service-card">
+            <img src="images/services/destination.png" alt="" width="64" height="64" loading="lazy">
+            <h3 class="service-card__title">Best Tour Guide</h3>
+            <p class="service-card__text">What looked like a small patch of purple grass, above five feet.</p>
+          </li>
+          <!-- Средняя карточка в макете с тенью вместо рамки - выделенная -->
+          <li class="service-card service-card--featured">
+            <img src="images/services/booking.png" alt="" width="64" height="64" loading="lazy">
+            <h3 class="service-card__title">Easy Booking</h3>
+            <p class="service-card__text">Square, was moving across the sand in their direction.</p>
+          </li>
+          <li class="service-card">
+            <img src="images/services/cloudy.png" alt="" width="64" height="64" loading="lazy">
+            <h3 class="service-card__title">Weather Forecast</h3>
+            <p class="service-card__text">What looked like a small patch of purple grass, above five feet.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Направления (лента с прокруткой и стрелками) ===== -->
+    <section class="section destinations" id="deals" aria-labelledby="dest-title">
+      <div class="container">
+        <div class="destinations__head">
+          <header class="section-head">
+            <p class="eyebrow">Top Destination</p>
+            <h2 class="section-title" id="dest-title">Explore top destination</h2>
+          </header>
+          <!-- Кнопки листают ленту ниже; JS отключает их, когда листать некуда -->
+          <div class="arrows" data-carousel-controls="destinations">
+            <button class="arrow-btn" type="button" data-dir="-1" aria-label="Previous destinations">
+              <img src="images/icons/arrow-left.svg" alt="" width="24" height="24">
+            </button>
+            <button class="arrow-btn arrow-btn--primary" type="button" data-dir="1" aria-label="Next destinations">
+              <img src="images/icons/arrow-right.svg" alt="" width="24" height="24">
+            </button>
+          </div>
+        </div>
+
+        <ul class="destinations__track" id="destinations" tabindex="0" aria-label="Destinations list">
+          <li class="dest-card">
+            <img class="dest-card__img" src="images/destinations/dest-1.jpg" alt="Boats on a beach with turquoise water, aerial view" width="373" height="350" loading="lazy">
+            <div class="dest-card__body">
+              <div class="dest-card__row">
+                <h3 class="dest-card__title">Paradise Beach, Bantayan Island</h3>
+                <p class="dest-card__price">$550.16</p>
+              </div>
+              <p class="dest-card__place">Rome, Italy</p>
+              <p class="rating"><span class="visually-hidden">Rating:</span> 4.8 <img src="images/icons/star.svg" alt="" width="24" height="24"></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img class="dest-card__img" src="images/destinations/dest-2.jpg" alt="Colorful lionfish over a coral reef" width="373" height="350" loading="lazy">
+            <div class="dest-card__body">
+              <div class="dest-card__row">
+                <h3 class="dest-card__title">Ocean with full of Colors</h3>
+                <p class="dest-card__price">$20.99</p>
+              </div>
+              <p class="dest-card__place">Maldives</p>
+              <p class="rating"><span class="visually-hidden">Rating:</span> 4.5 <img src="images/icons/star.svg" alt="" width="24" height="24"></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img class="dest-card__img" src="images/destinations/dest-3.jpg" alt="Mountain ridges above the clouds" width="373" height="350" loading="lazy">
+            <div class="dest-card__body">
+              <div class="dest-card__row">
+                <h3 class="dest-card__title">Mountain View, Above the cloud</h3>
+                <p class="dest-card__price">$150.99</p>
+              </div>
+              <p class="dest-card__place">United Arab Emirates</p>
+              <p class="rating"><span class="visually-hidden">Rating:</span> 5.0 <img src="images/icons/star.svg" alt="" width="24" height="24"></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Travel Point: картинка + цифры ===== -->
+    <section class="section travel-point" aria-labelledby="tp-title">
+      <!-- Декор: жёлтый круг с билетом. Сделан на CSS: экспорт из Figma был с белым фоном и перекрывал текст -->
+      <span class="travel-point__ticket" aria-hidden="true"><img src="images/icons/ticket-feature.svg" alt="" width="48" height="48"></span>
+      <div class="travel-point__inner">
+        <!-- Картинка в макете прижата к левому краю экрана, поэтому секция шире контейнера -->
+        <img class="travel-point__img" src="images/travel-point.jpg" alt="Happy traveler with a backpack sitting on a suitcase, discounted price label" width="871" height="697" loading="lazy">
+        <div class="travel-point__content">
+          <header class="section-head">
+            <p class="eyebrow">Travel Point</p>
+            <h2 class="section-title" id="tp-title">We helping you find your dream location</h2>
+          </header>
+          <p class="text-muted">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+          <!-- dl - список «термин: значение», подходит для пар «цифра - подпись» -->
+          <dl class="stats">
+            <div class="stat"><dt class="stat__label">Holiday Package</dt><dd class="stat__value">500+</dd></div>
+            <div class="stat"><dt class="stat__label">Luxury Hotel</dt><dd class="stat__value">100</dd></div>
+            <div class="stat"><dt class="stat__label">Premium Airlines</dt><dd class="stat__value">7</dd></div>
+            <div class="stat"><dt class="stat__label">Happy Customer</dt><dd class="stat__value">2k+</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ключевые возможности ===== -->
+    <section class="section features" aria-labelledby="features-title">
+      <div class="container features__inner">
+        <div class="features__content">
+          <header class="section-head">
+            <p class="eyebrow">Key features</p>
+            <h2 class="section-title" id="features-title">We offer best services</h2>
+          </header>
+          <p class="text-muted">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+
+          <ul class="features__list">
+            <li class="feature">
+              <span class="feature__icon feature__icon--orange"><img src="images/icons/location-feature.svg" alt="" width="48" height="48"></span>
+              <div>
+                <h3 class="feature__title">We offer best services</h3>
+                <p class="text-muted">Lorem Ipsum is not simply random text</p>
+              </div>
+            </li>
+            <li class="feature feature--outlined">
+              <span class="feature__icon feature__icon--yellow"><img src="images/icons/calendar-feature.svg" alt="" width="48" height="48"></span>
+              <div>
+                <h3 class="feature__title">Schedule your trip</h3>
+                <p class="text-muted">It has roots in a piece of classical</p>
+              </div>
+            </li>
+            <li class="feature">
+              <span class="feature__icon feature__icon--pink"><img src="images/icons/ticket-feature.svg" alt="" width="48" height="48"></span>
+              <div>
+                <h3 class="feature__title">Get discounted coupons</h3>
+                <p class="text-muted">Lorem Ipsum is not simply random text</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <img class="features__img" src="images/key-features.jpg" alt="Collage: black church in Iceland and a surfer in the waves, label 'Paradise on Earth'" width="693" height="869" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ===== Отзывы (слайдер) ===== -->
+    <section class="section testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Testimonials</p>
+          <h2 class="section-title" id="testimonials-title">Trust our clients</h2>
+        </header>
+
+        <div class="testimonials__slider" data-slider>
+          <button class="arrow-btn" type="button" data-slide="-1" aria-label="Previous testimonial">
+            <img src="images/icons/arrow-left.svg" alt="" width="24" height="24">
+          </button>
+
+          <!-- aria-live: экранный диктор зачитает новый отзыв при переключении -->
+          <div class="testimonials__viewport" aria-live="polite">
+            <article class="testimonial is-active">
+              <img class="testimonial__avatar" src="images/avatar.png" alt="" width="128" height="128" loading="lazy">
+              <p class="testimonial__author"><strong>Mark Smith</strong> / Travel Enthusiast</p>
+              <p class="testimonial__stars" aria-label="5 out of 5 stars">
+                <img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32">
+              </p>
+              <blockquote class="testimonial__text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</blockquote>
+            </article>
+            <!-- В макете один отзыв; ещё два - заглушки того же вида, чтобы слайдер работал. Аватар - инициалы -->
+            <article class="testimonial">
+              <span class="testimonial__avatar testimonial__avatar--initials" aria-hidden="true">AL</span>
+              <p class="testimonial__author"><strong>Anna Lee</strong> / Backpacker</p>
+              <p class="testimonial__stars" aria-label="5 out of 5 stars">
+                <img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32">
+              </p>
+              <blockquote class="testimonial__text">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature, making it over 2000 years old.</blockquote>
+            </article>
+            <article class="testimonial">
+              <span class="testimonial__avatar testimonial__avatar--initials" aria-hidden="true">JD</span>
+              <p class="testimonial__author"><strong>John Doe</strong> / Family Traveler</p>
+              <p class="testimonial__stars" aria-label="5 out of 5 stars">
+                <img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32"><img src="images/icons/star-big.svg" alt="" width="32" height="32">
+              </p>
+              <blockquote class="testimonial__text">Richard McClintock, a Latin professor, looked up one of the more obscure Latin words and discovered the undoubtable source.</blockquote>
+            </article>
+          </div>
+
+          <button class="arrow-btn arrow-btn--primary" type="button" data-slide="1" aria-label="Next testimonial">
+            <img src="images/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+
+          <div class="dots" role="group" aria-label="Choose testimonial">
+            <button class="dots__dot is-active" type="button" aria-label="Testimonial 1" aria-current="true"></button>
+            <button class="dots__dot" type="button" aria-label="Testimonial 2"></button>
+            <button class="dots__dot" type="button" aria-label="Testimonial 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Подписка ===== -->
+    <section class="section newsletter" aria-labelledby="newsletter-title">
+      <img class="newsletter__dots" src="images/decor/dots-newsletter.svg" alt="" aria-hidden="true" width="184" height="176" loading="lazy">
+      <img class="newsletter__rings" src="images/decor/rings.svg" alt="" aria-hidden="true" width="332" height="352" loading="lazy">
+      <div class="container">
+        <div class="newsletter__box">
+          <p class="eyebrow eyebrow--center">Subscribe to our newsletter</p>
+          <h2 class="newsletter__title" id="newsletter-title">Prepare yourself &amp; let’s explore the beauty of the world</h2>
+          <!-- novalidate: проверку email делает JS с понятным сообщением вместо стандартной подсказки браузера -->
+          <form class="newsletter__form" novalidate>
+            <label class="newsletter__field">
+              <img src="images/icons/message.svg" alt="" width="32" height="32">
+              <span class="visually-hidden">Your email</span>
+              <input class="newsletter__input" type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+            </label>
+            <button class="button button--primary newsletter__submit" type="submit">Subscribe</button>
+            <p class="newsletter__message" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Подвал ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__about">
+        <a class="logo" href="#" aria-label="Travlog - home">
+          <img class="logo__icon" src="images/logo.svg" alt="" width="40" height="40" loading="lazy">
+          <span class="logo__text">Travlog</span>
+        </a>
+        <p class="footer__text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+        <ul class="socials">
+          <li><a href="#" aria-label="Facebook"><img src="images/icons/social-1.svg" alt="" width="32" height="32" loading="lazy"></a></li>
+          <li><a href="#" aria-label="Twitter"><img src="images/icons/social-2.svg" alt="" width="32" height="32" loading="lazy"></a></li>
+          <li><a href="#" aria-label="Instagram"><img src="images/icons/social-3.svg" alt="" width="32" height="32" loading="lazy"></a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__cols" aria-label="Footer">
+        <div class="footer__col">
+          <h2 class="footer__title">Company</h2>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Mobile</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__title">Contact</h2>
+          <ul>
+            <li><a href="#">Why Travlog?</a></li>
+            <li><a href="#">Partner with us</a></li>
+            <li><a href="#">FAQ’s</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__title">Meet Us</h2>
+          <!-- address - семантический тег для контактов -->
+          <address>
+            <a href="tel:+00921234567890">+00 92 1234 56789</a>
+            <a href="mailto:info@travlog.com">info@travlog.com</a>
+            <span>205. R Street, New York BD23200</span>
+          </address>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <!-- Атрибуция обязательна по лицензии CC BY 4.0 -->
+      <p class="footer__credit">
+        Design: <a href="https://www.figma.com/community/file/1533371523286432790">Responsive Travel Landing Page</a>
+        by uixdesignacademy, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        Layout: Timofey Gubkin.
+      </p>
+    </div>
+  </footer>
+
+  <!-- defer: скрипт загрузится параллельно и выполнится, когда HTML уже разобран -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

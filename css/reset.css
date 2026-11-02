@@ -1,0 +1,53 @@
+/* Минимальный сброс: убираем разные отступы браузеров по умолчанию,
+   чтобы страница выглядела одинаково в Chrome, Firefox и Safari */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding и border входят в width - считать размеры по макету проще */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* плавная прокрутка по якорным ссылкам меню */
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+picture {
+  display: block; /* убирает щель под картинкой (картинки по умолчанию строчные) */
+  max-width: 100%; /* картинка не вылезает за свой контейнер на узких экранах */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* формы по умолчанию не наследуют шрифт страницы */
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
